@@ -53,7 +53,6 @@ class App {
             System.out.println("7. Выставить оценку");
             System.out.println("8. Оценки ученика");
             System.out.println("9. Оценки по предмету");
-            System.out.println("10. Изменить оценку");
             System.out.println("Выберите задачу:");
             String task = scanner.nextLine();
             switch (task) {
@@ -64,7 +63,6 @@ class App {
                 case "1":
                     Person student = personManager.createPerson("STUDENT");
                     personManager.addPersonToList(student, listPersons);
-                    
                     break;
                 case "2":
                     personManager.printListStudents(listPersons);
@@ -87,13 +85,10 @@ class App {
                     journalManager.setMarkToUser(listSubjects, listPersons, listJournals);
                     break;
                 case "8":
-                    
+                    journalManager.printMarksUser(listPersons,listJournals);
                     break;
                 case "9":
-                    
-                    break;
-                case "10":
-                    
+                    journalManager.printMarksForSubject(listJournals, listSubjects);
                     break;
                 default:
                     System.out.println("Нет такой задачи. Выберите из списка.");;
